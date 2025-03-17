@@ -1,5 +1,6 @@
 import React from 'react';
 import { Player } from '@/lib/game';
+import Stone from './Stone';
 
 interface SquareProps {
   value: Player;
@@ -11,19 +12,18 @@ const Square: React.FC<SquareProps> = ({ value, onClick, isWinningSquare }) => {
   return (
     <button
       className={`
-        w-full h-full aspect-square
+        w-8 h-8
         flex items-center justify-center
-        text-4xl font-bold
-        border border-gray-300 dark:border-gray-700
         transition-colors
-        ${isWinningSquare ? 'bg-green-200 dark:bg-green-900' : 'bg-white dark:bg-gray-800'}
-        hover:bg-gray-100 dark:hover:bg-gray-700
-        focus:outline-none focus:ring-2 focus:ring-blue-500
+        rounded-full
+        ${isWinningSquare ? 'bg-green-100/20 dark:bg-green-900/20' : ''}
+        hover:bg-amber-200/30 dark:hover:bg-amber-800/30
+        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-0
       `}
       onClick={onClick}
-      aria-label={value ? `${value}が置かれています` : 'マス目'}
+      aria-label={value ? `${value}が置かれています` : '交点'}
     >
-      {value}
+      <Stone player={value} isWinning={isWinningSquare} />
     </button>
   );
 };

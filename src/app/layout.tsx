@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "◯✕ゲーム",
-  description: "Next.js + TypeScript + Tailwind CSSで作成した◯✕ゲーム",
+  title: "五目並べ",
+  description: "Next.js + TypeScript + Tailwind CSSで作成した五目並べ",
 };
 
 export default function RootLayout({

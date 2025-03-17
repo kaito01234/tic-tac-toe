@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <div className="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
         <Board
           gameState={gameState}
           onSquareClick={handleClick}
@@ -29,7 +29,7 @@ export default function Home() {
       </div>
       
       <footer className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-        <p>◯✕ゲーム - Next.js + TypeScript + Tailwind CSS</p>
+        <p>五目並べ - Next.js + TypeScript + Tailwind CSS</p>
       </footer>
     </div>
   );
