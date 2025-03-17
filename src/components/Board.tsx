@@ -28,34 +28,6 @@ const Board: React.FC<BoardProps> = ({ gameState, onSquareClick, onReset }) => {
     return winningLine !== null && winningLine.includes(index);
   };
 
-  // マス目を生成
-  const renderCells = () => {
-    const rows = [];
-    
-    for (let row = 0; row < BOARD_SIZE; row++) {
-      const cells = [];
-      for (let col = 0; col < BOARD_SIZE; col++) {
-        const index = row * BOARD_SIZE + col;
-        cells.push(
-          <div key={col} className="flex items-center justify-center">
-            <Square
-              value={board[index]}
-              onClick={() => onSquareClick(index)}
-              isWinningSquare={isWinningSquare(index)}
-            />
-          </div>
-        );
-      }
-      rows.push(
-        <div key={row} className="flex justify-between">
-          {cells}
-        </div>
-      );
-    }
-    
-    return rows;
-  };
-
   return (
     <div className="flex flex-col items-center gap-4">
       <h1 className="text-3xl font-bold mb-4">五目並べ</h1>
